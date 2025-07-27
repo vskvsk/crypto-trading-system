@@ -1,0 +1,236 @@
+/* 全局样式重置和基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #0B1426;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A2332;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A4A5C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A5A6C;
+}
+
+/* 数字字体 */
+.mono-font {
+  font-family: "SF Mono", Monaco, Inconsolata, "Roboto Mono", "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 涨跌颜色类 */
+.price-up {
+  color: #52C41A;
+}
+
+.price-down {
+  color: #FF4D4F;
+}
+
+.price-neutral {
+  color: #B8C5D1;
+}
+
+/* 背景颜色类 */
+.bg-up {
+  background-color: rgba(82, 196, 26, 0.1);
+}
+
+.bg-down {
+  background-color: rgba(255, 77, 79, 0.1);
+}
+
+/* 卡片样式 */
+.trading-card {
+  background: #243447;
+  border: 1px solid #3A4A5C;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.trading-card:hover {
+  background: #2A3F56;
+  border-color: #4A5A6C;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #1890FF, #40A9FF);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #40A9FF, #69C0FF);
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #52C41A, #73D13D);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #73D13D, #95DE64);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #FF4D4F, #FF7875);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #FF7875, #FFA39E);
+  transform: translateY(-1px);
+}
+
+/* 输入框样式 */
+.trading-input {
+  background: #1A2332;
+  border: 1px solid #3A4A5C;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.trading-input:focus {
+  outline: none;
+  border-color: #1890FF;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.trading-input::placeholder {
+  color: #6B7785;
+}
+
+/* 表格样式 */
+.trading-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #243447;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.trading-table th {
+  background: #1A2332;
+  color: #B8C5D1;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trading-table td {
+  padding: 12px 16px;
+  border-top: 1px solid #3A4A5C;
+  font-size: 14px;
+}
+
+.trading-table tr:hover {
+  background: #2A3F56;
+}
+
+/* 加载动画 */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3A4A5C;
+  border-top: 2px solid #1890FF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .trading-card {
+    padding: 12px;
+  }
+  
+  .trading-table th,
+  .trading-table td {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Ant Design 主题覆盖 */
+.ant-layout {
+  background: #0B1426 !important;
+}
+
+.ant-layout-header {
+  background: #1A2332 !important;
+  border-bottom: 1px solid #3A4A5C !important;
+}
+
+.ant-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ant-menu-item {
+  color: #B8C5D1 !important;
+}
+
+.ant-menu-item:hover {
+  color: #1890FF !important;
+}
+
+.ant-menu-item-selected {
+  color: #1890FF !important;
+  background: rgba(24, 144, 255, 0.1) !important;
+}
